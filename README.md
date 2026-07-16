@@ -46,11 +46,6 @@ Model 4: Report Generator → Human-readable psychological report
 
 ## 📦 Installation
 
-### Prerequisites
-- Python 3.12.7
-- Windows OS (paths configured for Windows)
-- No GPU required (CPU training supported)
-
 ### Step 1: Clone/Setup Project
 ```bash
 cd c:\Users\abhis\OneDrive\Desktop\sem 6\robo_project
@@ -76,20 +71,6 @@ python -m spacy download en_core_web_sm
 python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('vader_lexicon')"
 ```
 
-### Step 5: Install OpenFace (for facial feature extraction)
-
-**Option A: Download Pre-built Binary (Recommended)**
-1. Download OpenFace 2.2.0 for Windows from:
-   https://github.com/TadasBaltrusaitis/OpenFace/releases
-2. Extract to `C:\OpenFace` or similar location
-3. Add to PATH:
-   ```bash
-   set PATH=%PATH%;C:\OpenFace
-   ```
-
-**Option B: Build from Source (Advanced)**
-Follow instructions at: https://github.com/TadasBaltrusaitis/OpenFace/wiki/Windows-Installation
-
 **Verify Installation:**
 ```bash
 # Check if FeatureExtraction.exe is accessible
@@ -98,7 +79,7 @@ FeatureExtraction.exe -h
 
 ## 🗂️ Data Structure
 
-Your data should be organized as follows:
+data is organized as follows:
 ```
 robo_project/
 ├── data/
@@ -208,11 +189,9 @@ This allows you to:
    python step8_web_enhanced.py 
    ```
 
-2. Open browser: `http://127.0.0.1:5000`
+2. Grant webcam permissions when prompted
 
-3. Grant webcam permissions when prompted
-
-4. Start conversation:
+3. Start conversation:
    - System asks adaptive questions
    - Type responses in chat
    - Webcam captures facial expressions
@@ -254,25 +233,6 @@ Edit [config.py](config.py) to customize:
 - Model hyperparameters
 - Training settings
 - File paths
-
-## 🐛 Troubleshooting
-
-### Issue: "No module named 'transformers'"
-```bash
-pip install transformers
-```
-
-### Issue: "OpenFace not found"
-- Ensure FeatureExtraction.exe is in PATH
-- Or provide full path in config.py
-
-### Issue: "CUDA not available"
-- System is configured for CPU training
-- No GPU required
-
-### Issue: "Not enough sessions for training"
-- Download more sessions from DAIC-WOZ dataset
-- Add session IDs to config.py
 
 ## 📚 References
 
